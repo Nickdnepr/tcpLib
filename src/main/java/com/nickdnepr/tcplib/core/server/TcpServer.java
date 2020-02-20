@@ -29,7 +29,6 @@ public class TcpServer {
     private void start() {
         new Thread(() -> {
             while (!closed) {
-//                System.out.println("Working");
                 try {
                     ClientHandler handler = new ClientHandler(serverSocket.accept(), listener);
                     handlers.add(handler);

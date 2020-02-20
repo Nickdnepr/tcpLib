@@ -50,7 +50,6 @@ public class TcpClient {
     }
 
     private void manageConnectionLost() throws IOException {
-//        System.out.println("a");
         if (autoRestoreConnection) {
             setup();
         } else {
@@ -81,7 +80,6 @@ public class TcpClient {
     private void listen() {
         new Thread(() -> {
             while (!closed) {
-//                System.out.println("Working");
                 String message;
                 try {
                     if ((message = in.readLine()) != null) {
@@ -100,7 +98,6 @@ public class TcpClient {
                 }
             }
         }).start();
-//        System.out.println("a");
     }
 
     public void setOnMessageReceivedListener(OnMessageReceivedListener listener) {
